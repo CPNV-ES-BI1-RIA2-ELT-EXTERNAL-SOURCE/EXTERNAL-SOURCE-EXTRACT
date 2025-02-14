@@ -1,3 +1,5 @@
+# TODO this dependencies have to be mentionned on class diagram
+
 require 'json'
 require 'securerandom'
 require 'logger'
@@ -7,6 +9,7 @@ require_relative '../lib/http_client'
 module JobRoutes
 
   def self.registered(app)
+    # TODO filename ???
     app.post '/api/v1/data/extract' do
       content_type :json
       request_body = JSON.parse(request.body.read)

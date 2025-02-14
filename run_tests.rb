@@ -1,3 +1,5 @@
+# TODO run test outside test folder. Need to be remove for delivery.
+
 require 'minitest/autorun'
 require 'minitest/reporters'
 Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new) if defined?(Minitest::Reporters)

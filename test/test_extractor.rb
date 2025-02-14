@@ -3,6 +3,10 @@ require 'logger'
 require_relative '../lib/extractor'
 require_relative '../lib/http_client'
 
+#TODO remove http_client dependencies and adapt the code
+# this not a end-to-end test. We test only the extraction
+# based on a json/xml file known (stub or mock required).
+
 class TestExtractor < Minitest::Test
   def setup
     # Given an API client, a logger
@@ -16,6 +20,7 @@ class TestExtractor < Minitest::Test
     assert_instance_of Extractor, @extractor
   end
 
+  # TODO add at the end of the signature the expected result
   def test_extract_all_data_without_exceptions
     # Given: No oldest_record, no missing data, no duplicates
     data_file_path = File.join(__dir__, 'data', 'data_stationboard_lausanne_2024_12_01.json')
